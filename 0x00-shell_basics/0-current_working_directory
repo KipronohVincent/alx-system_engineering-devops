@@ -1,2 +1,4 @@
 #!/bin/bash
-pwd $'\n'
+pwd $/c/Users/i/alx-system_engineering-devops/0x00-shell_basics
+'/n'
+

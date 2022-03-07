@@ -1,0 +1,20 @@
+total 8
+drwxr-xr-x 1 vincent vincent 4096 Mar  7 13:56 .
+drwxr-xr-x 1 vincent vincent 4096 Mar  7 09:22 ..
+-rwxr--r-- 1 vincent vincent   32 Mar  7 10:03 0-hello_world
+-rw-r--r-- 1 vincent vincent    0 Mar  7 09:50 0-hello_world~
+-rwxr--r-- 1 vincent vincent   28 Mar  7 10:09 1-confused_smiley
+-rw-r--r-- 1 vincent vincent   28 Mar  7 10:01 1-confused_smiley~
+-rwxr--r-- 1 vincent vincent   28 Mar  7 10:14 2-hellofile
+-rw-r--r-- 1 vincent vincent    0 Mar  7 10:13 2-hellofile~
+-rwxr--r-- 1 vincent vincent   39 Mar  7 10:21 3-twofiles
+-rwxr--r-- 1 vincent vincent   29 Mar  7 10:28 4-lastlines
+-rwxr--r-- 1 vincent vincent   29 Mar  7 10:31 5-firstlines
+-rwxr--r-- 1 vincent vincent   36 Mar  7 10:36 6-third_line
+-rwxr--r-- 1 vincent vincent   86 Mar  7 13:51 7-file
+-rw-r--r-- 1 vincent vincent   87 Mar  7 13:48 7-file~
+-rwxr--r-- 1 vincent vincent   36 Mar  7 13:55 8-cwd_state
+-rw-r--r-- 1 vincent vincent 4411 Mar  7 09:40 README.md
+-rw-r--r-- 1 vincent vincent    0 Mar  7 09:23 README.md~
+-rw-r--r-- 1 vincent vincent   12 Mar  7 13:52 \*\\'"Best School"\'\\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 vincent vincent    0 Mar  7 13:56 ls_cwd_content

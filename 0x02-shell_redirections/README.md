@@ -33,7 +33,7 @@ Tasks 📃
 
 7. It is a good file that cuts iron without making a noise
 
-7-file: Bash script that creates a file named exactly \*\\'"Holberton School"\'\\*$\?\*\*\*\*\*:) containing the text Holberton School ending by a new line.
+7-file: Bash script that creates a file named exactly \*\\'"Best School"\'\\*$\?\*\*\*\*\*:) containing the text Best School ending by a new line.
 
 8. Save current state of directory
 

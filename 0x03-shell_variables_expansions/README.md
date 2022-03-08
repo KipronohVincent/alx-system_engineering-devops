@@ -23,10 +23,10 @@ Tasks 📃
 5-local_variables: Bash script that lists all local variables, environment variables and functions.
 6. Local variable
 
-6-create_local_variable: Bash script that creates a new local variable named BETTY with value Holberton.
+6-create_local_variable: Bash script that creates a new local variable named BEST with value School.
 7. Global variable
 
-7-create_global_variable: Bash script that creates a new global variable named HOLBERTON with value Betty.
+7-create_global_variable: Bash script that creates a new global variable named School with value Best.
 8. Every addition to true knowledge is an addition to human power
 
 8-true_knowledge: Bash script that prints the result of the addition of 128 with the value stored in the environment variable TRUEKNOWLEDGE, followed by a new line.

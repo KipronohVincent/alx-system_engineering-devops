@@ -1,44 +1,8 @@
 #!/usr/bin/env bash
-# Installs HAProxy version 2.6 with the following configurations:
-#+    Enables management via the init script.
-#+    Distributes requests using a round-robin algorithm.
-
-apt-get install -y software-properties-common
-add-apt-repository -y ppa:vbernat/haproxy-2.6
-apt-get update
-apt-get install -y haproxy=2.6.\*
-
-echo "ENABLED=1" >> /etc/default/haproxy
-mv /etc/haproxy/haproxy.cfg{,.original}
-touch /etc/haproxy/haproxy.cfg
-
-printf %s "global
-    log 127.0.0.1 local0 notice
-    maxconn 2000
-    user haproxy
-    group haproxy
-
-defaults
-    log     global
-    mode    http
-    option  httplog
-    option  dontlognull
-    retries 3
-    option redispatch
-    timeout connect  5000
-    timeout client  10000
-    timeout server  10000
-
-listen hbnb
-    bind 0.0.0.0:80
-    mode http
-    stats enable
-    stats uri /haproxy?stats
-    balance roundrobin
-    option httpclose
-    option forwardfor
-    server 20205-web-01 44.192.38.3 check
-    server 20205-web-02 3.239.82.120 check
-" >> /etc/haproxy/haproxy.cfg
-
-service haproxy start
+# Install and configure HAproxy on your lb-01 server.
+apt-get -y install software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.0
+apt-get -y update
+apt-get -y install haproxy=2.0.\*
+echo -e "\nfrontend http\n\tbind *:80\n\tmode http\n\tdefault_backend web-backend\n\nbackend web-backend\n\tbalance roundrobin\n\tserver 13101-web-01 34.231.21.62:80 check\n\tserver 13101-web-02 34.231.110.215:80 check" >> /etc/haproxy/haproxy.cfg
+service haproxy restart

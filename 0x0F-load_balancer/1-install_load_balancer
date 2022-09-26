@@ -3,6 +3,6 @@
 apt-get -y install software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-2.0
 apt-get -y update
-apt-get -y install haproxy=2.0.\*
+apt-get -y install haproxy=2.4.\*
 echo -e "\nfrontend http\n\tbind *:80\n\tmode http\n\tdefault_backend web-backend\n\nbackend web-backend\n\tbalance roundrobin\n\tserver 20205-web-01 44.192.38.3 check\n\tserver 20205-web-02 3.239.82.120 check" >> /etc/haproxy/haproxy.cfg
 service haproxy restart

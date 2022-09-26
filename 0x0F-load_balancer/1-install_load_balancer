@@ -38,7 +38,7 @@ listen hbnb
     option httpclose
     option forwardfor
     server 20205-web-01 44.192.38.3 check
-    server 20205-web-02 34.231.110.246 check
+    server 20205-web-02 3.239.82.120 check
 " >> /etc/haproxy/haproxy.cfg
 
 service haproxy start

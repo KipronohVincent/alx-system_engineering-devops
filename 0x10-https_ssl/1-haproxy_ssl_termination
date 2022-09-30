@@ -8,8 +8,8 @@ global
 defaults
     log     global
     mode    http
-    option  httplog
-    option  dontlognull
+    option  forwardfor
+    option  http-server-close
     retries 3
     option  redispatch
     timeout connect  5000
@@ -19,19 +19,21 @@ defaults
     option  http-server-close
 
 frontend www-http
-    bind   0.0.0.0:80
+    bind   3.236.20.125:80
     reqadd X-Forwarded-Proto:\ http
     default_backend www-backend
 
 frontend www-https
-    bind   0.0.0.0:443 ssl crt /etc/letsencrypt/live/www.kipronoh.tech/privkey.pem
+    bind   3.236.20.125:443 ssl crt /etc/haproxy/certs/www.kipronoh.tech.pem
     reqadd X-Forwarded-Proto:\ https
-    acl    letsencrypt-acl path_beg /.well-known/acme-challenge/
+    acl letsencrypt-acl path_beg /.well-known/acme-challenge/
     use_backend letsencrypt-backend if letsencrypt-acl
     default_backend www-backend
 
 backend www-backend
-    balance  roundrobin
-    redirect scheme https if !{ ssl_fc }
-    server 20205-web-01 44.192.38.3:80 check
-    server 20205-web-02 3.239.82.120:80 check
+   redirect scheme https if !{ ssl_fc }
+   server web-01 44.192.38.3:80 check
+   server web-02 3.239.82.120:80 check
+
+backend letsencrypt-backend
+   server letsencrypt 127.0.0.1:54321

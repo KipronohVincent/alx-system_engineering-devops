@@ -25,4 +25,4 @@ listen hbnb
     server 20205-web-02 3.239.82.120 check
 frontend http-in
         bind *:80
-        bind *:443 ssl crt /etc/letsencrypt/live/lb-01.kipronoh.tech/haproxy.pem
+        bind *:443 ssl crt /etc/letsencrypt/live/www.kipronoh.tech/privkey.pem

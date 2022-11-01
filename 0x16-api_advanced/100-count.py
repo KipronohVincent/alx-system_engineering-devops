@@ -1,20 +1,17 @@
 #!/usr/bin/python3
-"""A recursive function that queries the Reddit API,
-parses the title of all hot articles,
-and prints a sorted count of given keywords
-(case-insensitive, delimited by spaces. """
+"""Function to count words in all hot posts of a given Reddit subreddit."""
 import requests
 
 
 def count_words(subreddit, word_list, instances={}, after="", count=0):
-    """prints a sorted count of given keywords
-    (case-insensitive, delimited by spaces.
+    """Prints counts of given words found in hot posts of a given subreddit.
+
     Args:
-    subreddit (str): The subreddit to search.
-    word_list (list): The list of words to search for in post titles.
-    instances (obj): Key/value pairs of words/counts.
-    after (str): The parameter for the next page of the API results.
-    count (int): The parameter of results matched thus far.
+        subreddit (str): The subreddit to search.
+        word_list (list): The list of words to search for in post titles.
+        instances (obj): Key/value pairs of words/counts.
+        after (str): The parameter for the next page of the API results.
+        count (int): The parameter of results matched thus far.
     """
     url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
     headers = {
